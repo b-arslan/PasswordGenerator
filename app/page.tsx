@@ -16,7 +16,7 @@ const Home = () => {
         setLoading(true);
         
         setTimeout(() => {
-            setInputValue('bAdnit-zeqsam-qykpi4');
+            setInputValue('testValue');
         }, 1000);
 
         setTimeout(() => {
