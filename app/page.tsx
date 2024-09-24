@@ -3,6 +3,7 @@ import { useState } from 'react';
 import styles from './styles/page.module.scss';
 import { Layout, Row, Col, Button, Input, message } from 'antd';
 import { CopyOutlined } from '@ant-design/icons';
+import axios from 'axios';
 
 const { Content } = Layout;
 
@@ -11,16 +12,17 @@ const Home = () => {
     const [loading, setLoading] = useState(false);
     const [inputValue, setInputValue] = useState('');
 
-    const handleGenerate = () => {
+    const handleGenerate = async () => {
         setLoading(true);
         
-        setTimeout(() => {
-            setInputValue('testValue');
-        }, 1907);
-
-        setTimeout(() => {
+        try {
+            const response = await axios.get('/api/generate-password');
+            setInputValue(response.data.password);
             setLoading(false);
-        }, 2000);
+        } catch (err) {
+            console.error('Error: ', err);
+            setLoading(false);
+        }
     }
 
     const handleInputChange = (e: any) => {
