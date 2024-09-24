@@ -3,7 +3,6 @@ import { useState } from 'react';
 import styles from './styles/page.module.scss';
 import { Layout, Row, Col, Button, Input, message } from 'antd';
 import { CopyOutlined } from '@ant-design/icons';
-import { validateHeaderName } from 'http';
 
 const { Content } = Layout;
 
@@ -17,7 +16,7 @@ const Home = () => {
         
         setTimeout(() => {
             setInputValue('testValue');
-        }, 1000);
+        }, 1907);
 
         setTimeout(() => {
             setLoading(false);
@@ -34,7 +33,6 @@ const Home = () => {
     }
 
     return (
-
         <Layout className={styles.layout}>
             <Content className={styles.content}>
                 <Row style={{height: '100%', width: '100%'}}>
@@ -53,7 +51,6 @@ const Home = () => {
                 </Row>
             </Content>
         </Layout>
-
     );
 }
 
